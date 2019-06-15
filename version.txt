@@ -1,0 +1,13 @@
+15/06/2019 {
+	- Sistema de Usuários
+	- Sistema de Cadastro
+	- Autenticação
+	- Controle de Acesso
+	- Cadastro de Funcionários
+	- Cadastro de Categorias
+	- Listagem de Funcionários
+	- Listagem de Categorias
+	- Edição de Usuários
+	- Edição de Funcionários
+	- Perfil do Usuário
+}

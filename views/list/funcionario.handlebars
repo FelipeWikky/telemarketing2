@@ -1,0 +1,16 @@
+<h1 class="display-4" style="font-family:'Times New Roman'">Funcionários</h1>
+<hr>
+
+{{#each funcs}}
+<div class="card mt-3">
+    <div class="card-body">
+        <h4 style="color:#161683">{{nome}}</h4>
+        <h5>Gênero.: {{genero}}</h5>
+        <h5>Categoria.: {{categoria.nome}}</h5>
+    </div>
+</div>
+{{else}}
+<div class="card mt-4">
+    <h4>Não há Funcionários Registrados</h4>
+</div>
+{{/each}}

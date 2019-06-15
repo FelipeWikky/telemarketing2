@@ -1,0 +1,39 @@
+<h4
+    style="font-family:'Times New Roman'; text-align: center; color:blue; font-weight: bold; border: 2px solid; border-color: black; background: #e6e2e2a2">
+    Edição de Usuários
+</h4>
+
+{{#each users}}
+    <div class="card mt-3">
+        <div class="card-body">
+    
+            <form action="/dev/usuario", method="post">
+                <small style="font-weight: bold">Obj.ID</small> <small>{{_id}}</small> <br>
+                <input type="hidden" name="uid" id="uid" value="{{_id}}">
+
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control form-control-sm" id="nome" name="nome"
+                    value="{{nome}}">
+
+                <label for="email">E-Mail</label>
+                <input type="email" class="form-control form-control-sm" id="email" name="email"
+                    value="{{email}}">
+
+                <label for="senha">Senha Hash</label>
+                <input type="senha" class="form-control form-control-sm" id="senha" name="senha" readonly
+                    value="{{senha}}">
+
+                <label for="access">Nível de Acesso</label>
+                <input type="number" class="form-control form-control-sm" id="access" name="access"
+                    style="max-width: 30%; width: 110px"  value="{{access}}">
+
+                <label for="secret">Palavra Secreta</label>
+                <input type="text" class="form-control form-control-sm" id="secret" name="secret"
+                    style="max-width: 50%; width: 150px" readonly value="{{palavraSecret}}">
+
+                <button type="submit" class="btn btn-outline-primary mt-2">Alterar Dados</button>
+            </form>
+    
+        </div>
+    </div>
+{{/each}}

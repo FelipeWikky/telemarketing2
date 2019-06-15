@@ -5,9 +5,13 @@ const UserSchema = new Schema({
     email:String,
     senha:String,
     nome:String,
-    acess:{
+    access:{
         type:Number,
         default: 0
+    },
+    palavraSecret:{
+        type: String,
+        default: 'node'
     }
 },{timestamps:true}
 )

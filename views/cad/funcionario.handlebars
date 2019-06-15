@@ -1,10 +1,10 @@
-<h4 style="text-align: center; color:blue; font-weight: bold; border: 2px solid; border-color: black; background: #e6e2e2a2" >
+<h4 style="font-family:'Times New Roman'; text-align: center; color:blue; font-weight: bold; border: 2px solid; border-color: black; background: #e6e2e2a2" >
     Cadastro de Funcionários
 </h4>
 
 <div class="card">
     <div class="card-body">
-        <form action="/cad/funcionario" method="post">
+        <form action="/dev/cad/funcionario" method="post">
 
             <label for="matr">Matrícula</label>
             <input type="text" class="form-control form-control-sm" name="matr" id="matr" placeholder="XXXX-XX" required pattern="\d{4}-\d{2}"/>
@@ -41,7 +41,7 @@
 {{#each funcs}}
     <div class="card mt-3">
         <div class="card-body">
-            <a href="/info/{{_id}}"> <small style="font-weight: bold">{{categoria._id}}</small> </a>
+            <a href="/dev/info/{{_id}}"> <small style="font-weight: bold">{{categoria._id}}</small> </a>
             <h5>Matr. {{matricula}}</h5>
             <h4 style="color:blue">{{nome}}</h4>
             <h5>Dt.Nascimento.: {{dtNasc}}</h5>

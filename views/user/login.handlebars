@@ -1,22 +1,23 @@
 <h2 style="text-align: center; color:#c77305">Sessão de Login</h2>
 <hr>
 
-<div class="card" style="margin: 0pt auto; max-width: 60%; width: 500px">
+<div class="card" style="margin: 0pt auto; max-width: 50%; width: 500px; border: 1pt solid; border-color: #bebdb6; border-radius: 5%">
     <div class="card-body">
-        <form method="post" action="/user/">
+
+        <form method="post" action="/user/login">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text" id="btnGroupAddon">E-Mail</div>
                 </div>
-                <input type="email" class="form-control" placeholder="example@example.com"
+                <input type="email" name="email" required class="form-control" placeholder="example@example.com"
                     aria-label="Input group example" aria-describedby="btnGroupAddon">
             </div>
-
+    
             <div class="input-group mt-4">
                 <div class="input-group-prepend">
                     <div class="input-group-text" id="btnGroupAddon">Senha</div>
                 </div>
-                <input type="password" class="form-control" placeholder="" aria-label="Input group example"
+                <input type="password" name="senha"  required class="form-control" placeholder="" aria-label="Input group example"
                     aria-describedby="btnGroupAddon">
             </div>
 
@@ -25,5 +26,6 @@
                 Fazer Login
             </button>
         </form>
+
     </div>
 </div>

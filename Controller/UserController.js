@@ -4,7 +4,10 @@ const Auth = require('./Auth')
 
 module.exports = {
     async list(req, res) {
-
+        Usuario.find().sort('-createdAt')
+            .then((users) => {
+                res.render('edit/usuario', {users:users})
+            })
     },
 
     async create(req, res) {
@@ -72,6 +75,19 @@ module.exports = {
     },
 
     async edit(req, res) {
+        const User = await Usuario.findOne({_id:req.body.uid})
+            .then((user) => {
+                user.nome = req.body.nome,
+                user.email = req.body.email,
+                //user.senha = req.body.senha
+                user.access = req.body.access
+                //user.palavraSecret = req.body.palavraSecret
 
+                user.save()
+                    .then(() => {
+                        req.flash('suc_msg', `Usuário Editado com Sucesso`)
+                        res.redirect('/dev/usuarios')
+                    })
+            })
     }
 }

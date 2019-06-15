@@ -2,13 +2,6 @@ const Funcionario = require('../models/Funcionario')
 const Categoria = require('../models/Categoria')
 const CategController = require('../Controller/CategController')
 
-function callC(){
-    const categs = Categoria.find()
-        .then((cats) => {
-            console.log(cats)
-        })        
-}
-
 module.exports = {
     async list(req, res) {
         const funcionarios = await Funcionario.find().sort('-createdAt')
@@ -84,7 +77,7 @@ module.exports = {
                         Categoria.find()
                             .then((cats) => {
                                 req.flash('suc_msg', `Funcionário [${func.matricula}] Editado com Sucesso.`)
-                                res.redirect(`/info/${func._id}`)
+                                res.redirect(`/dev/info/${func._id}`)
                             })
                     })
                     .catch((err)=> {

@@ -1,1 +1,37 @@
-<h4>Bem-Vindo Usuário</h4>
+<h4 style="font-size: 38px; text-align: center">Bem-Vindo<Br> <span style="color:#7dc20f; font-family:'Times New Roman'">{{user.nome}}</span></h4>
+
+<div class="card mt-3" style="margin: 0pt auto; max-width: 80%; width: 500px; 
+    border: 2px solid; border-radius: 10px; border-color: #969697"
+>
+    <div class="card-body">
+        <div style="background: #e0dbdb; border: 2px solid; border-radius: 10px; border-color: #969697">
+            <h3 style="text-align: center; font-family: Georgia; font-weight: bold-">Seus Dados</h3>
+        </div>
+
+        <hr> 
+
+        <form action="/user/update" method="post">
+
+            <label for="nome" style="font-size: 25px; font-weight: bold; font-family: Georgia; color:#b8ae2e">
+                Nome
+            </label>
+            <input type="text" name="nome" id="nome" value="{{user.nome}}"
+            class="form-control" style="max-width: 100%; width:1000px; font-size: 18px;">
+
+            <label for="nome" style="font-size: 25px; font-weight: bold; font-family: Georgia; color:#b8ae2e">
+                E-Mail 
+            </label>
+            <input type="email" name="email" id="email" value="{{user.email}}"
+            class="form-control" style="max-width: 100%; width:1000px">
+
+            <label for="nome" style="font-size: 25px; font-weight: bold; font-family: Georgia; color:#b8ae2e">
+                Nível de Acesso
+            </label>
+            <input type="email" name="email" id="email" value="{{user.access}}" class="form-control"
+                style="max-width: 100%; width:50px" readonly>
+
+            <button type="submit" style="max-width: 100%; width:1000px; font-size:18px;" class="btn btn-outline-info mt-4" style="color: black">Efetuar Alterações</button>
+        
+        </form>
+    </div>
+</div>

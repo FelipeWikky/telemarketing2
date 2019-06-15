@@ -7,37 +7,45 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
             <li class="nav-item active">
-                <a class="nav-link" href="/cad/funcionario">Funcionários<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/list/funcionario">Funcionários<span class="sr-only">(current)</span></a>
             </li>
+
             <li class="nav-item active">
-                <a class="nav-link" href="/cad/categoria">Categorias</a>
+                <a class="nav-link" href="/list/categoria">Categorias</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/user/login" tabindex="-1" aria-disabled="true">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/user/register" tabindex="-1" aria-disabled="true">Registrar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Dev++</a>
-            </li>
+
+            {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">Perfil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout" tabindex="-1" aria-disabled="true">Sair</a>
+                </li>
+            {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/login" tabindex="-1" aria-disabled="true">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/register" tabindex="-1" aria-disabled="true">Registrar</a>
+                </li>
+            {{/if}}
+
+            {{#if user.access}}
+                <li class="nav-item">
+                    <a class="nav-link " href="/dev/" tabindex="-1" aria-disabled="true" >Dev++</a>
+                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" >Dev++</a> -->
+
+                </li>
+            {{/if}}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+
+        <form class="form-inline my-2 my-lg-0" method="get" action="/list/">
             <input class="form-control mr-sm-2" type="search" placeholder="Digite Aqui" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
     </div>
 </nav>
+

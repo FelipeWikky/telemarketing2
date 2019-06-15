@@ -12,7 +12,7 @@ router.get('/:mat', (req, res) => {
             Categoria.find()
                 .then((cats)=> {
                     //console.log(func)
-                    res.render(`info/one`, { func: func, cats:cats })
+                    res.render(`edit/one`, { func: func, cats:cats })
                 })
             })
         .catch((err) => {
