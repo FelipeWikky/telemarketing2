@@ -1,0 +1,54 @@
+{{#each success}}
+    <div class="alert alert-success" role="alert"> <strong>{{msg}}</strong> </div>
+{{/each}}
+{{#each fail}}
+    <div class="alert alert-danger" role="alert"> <strong>{{msg}}</strong> </div>
+{{/each}}
+
+<h4 style="text-align: center">Visualizar || Editar Funcionário</h4>
+<hr>
+
+    <form action="/edit/funcionario" method="POST">
+
+    <div class="card">
+        <div class="card-body">
+            <form action="/edit/funcionario" method="post">
+                <input type="hidden" name="uid" id="uid" value="{{func._id}}">
+
+                <label for="matr">Matrícula</label>
+                <input type="text" class="form-control form-control-sm" name="matr" id="matr" placeholder="XXXX-XX" required
+                    pattern="\d{4}-\d{2}" value="{{func.matricula}}" readonly=“true”/>
+    
+                <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control form-control-sm" name="nome" id="nome" value="{{func.nome}}">
+    
+                <label for="nasc">Data de Nascimento</label>
+                <input type="text" class="form-control form-control-sm" name="nasc" id="nasc" placeholder="AAAA-MM-DD"
+                    required pattern="\d{4}-\d{2}-\d{2}" value="{{func.dtNasc}}">
+    
+                <label for="genero">Gênero</label> <br>
+                <select name="genero" id="genero" class="form-control form-control-sm" style="max-width: 50%; width:150px">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+    
+                <label for="admissao">Data de Admissão</label>
+                <input type="text" class="form-control form-control-sm" name="admissao" id="admissao"
+                    placeholder="AAAA-MM-DD" pattern="\d{4}-\d{2}-\d{2}" value="{{func.dtAdmissao}}">
+    
+                <label for="categoria">Categoria Anterior: {{func.categoria.nome}}</label>
+                <select name="categoria" id="categoria" class="form-control form-control-sm"
+                    style="max-width: 50%; width:155px">
+                    {{#each cats}}
+                    <option value="{{_id}}">{{nome}}</option>
+                    {{else}}
+                    <option value="0">Sem Categoria</option>
+                    {{/each}}
+                </select>
+    
+                <button type="submit" class="btn btn-outline-success mt-4">Editar Funcionário</button>
+            </form>
+        </div>
+    </div>
+
+</form>

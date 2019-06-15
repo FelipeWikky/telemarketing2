@@ -1,0 +1,35 @@
+<h4
+    style="text-align: center; color:blue; font-weight: bold; border: 2px solid; border-color: black; background: #e6e2e2a2">
+    Cadastro de Categorias
+</h4>
+
+<div class="card">
+    <div class="card-body">
+        <form action="/cad/categoria" method="post">
+
+            <input type="hidden" class="form-control form-control-sm" name="categ" id="categ" value=0 style="width: 70px" required min="1" max="50"/>
+
+            <label for="nome">Nome da Categoria</label>
+            <input type="text" class="form-control form-control-sm" name="nome" id="nome" required />
+
+            <label for="salario">Salário</label>
+            <input type="text" class="form-control form-control-sm" name="salario" id="salario" placeholder="0000.00" pattern="\d+\.\d{2}">
+
+            <button type="submit" class="btn btn-outline-success mt-4">Criar Categoria</button>
+        </form>
+    </div>
+</div>
+
+<hr>
+<hr>
+
+
+{{#each categs}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <small>{{_id}}</small>
+            <h5>Categoria: {{nome}}</h5>
+            <h5>Salário: {{salario}}</h5>
+        </div>
+    </div>
+{{/each}}

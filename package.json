@@ -1,0 +1,19 @@
+{
+  "name": "telemarketing",
+  "version": "1.0.1",
+  "description": "A app very nice",
+  "main": "index.js",
+  "repository": "https://github.com/FelipeWikky/telemarketing2.git",
+  "author": "Wikky",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.6.0"
+  }
+}
