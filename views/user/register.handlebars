@@ -1,0 +1,56 @@
+{{#each erros}}
+    <div class="alert alert-danger" role="alert" style="height: 45px"> {{msg}} </div>
+{{/each}}
+
+<h2 style="text-align: center; color:#c77305">Registrar Conta</h2>
+<hr>
+
+<div class="card" style="background: #e0dfdb">
+    <div class="card-body">
+
+        <div class="card" style="margin: 0pt auto; max-width: 60%; width: 550px; background: #fdfdfc">
+            <div class="card-body">
+                <form method="post" action="/user/register">
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Digite seu Nome</div>
+                        </div>
+                        <input type="email" name="nome" id="nome" required class="form-control" placeholder=""
+                            aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Informar E-Mail..</div>
+                        </div>
+                        <input type="email" name="email" id="email" required class="form-control" placeholder=""
+                            aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+        
+                    <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Informar Senha...</div>
+                        </div>
+                        <input type="password" name="senha" id="senha" required class="form-control" placeholder=""
+                            aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Confirmar Senha.</div>
+                        </div>
+                        <input type="password" name="senhac" id="senhac" required class="form-control" placeholder=""
+                            aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+        
+                    <button type="submit" name="login" id="login" class="btn btn-outline-primary mt-4"
+                        style="width: 100%; color:#fd1e00">
+                        Criar Conta
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

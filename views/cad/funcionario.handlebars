@@ -1,15 +1,3 @@
-{{#each erros}}
-    <div class="alert alert-danger" role="alert" style="height: 45px"> {{msg}} </div>
-{{/each}}
-
-{{#each success}}
-    <div class="alert alert-success" role="alert"> <strong>{{msg}}</strong> </div>
-{{/each}}
-
-{{#each fail}}
-    <div class="alert alert-danger" role="alert"> <strong>{{msg}}</strong> </div>
-{{/each}}
-
 <h4 style="text-align: center; color:blue; font-weight: bold; border: 2px solid; border-color: black; background: #e6e2e2a2" >
     Cadastro de Funcionários
 </h4>
@@ -54,6 +42,7 @@
     <div class="card mt-3">
         <div class="card-body">
             <a href="/info/{{_id}}"> <small style="font-weight: bold">{{categoria._id}}</small> </a>
+            <h5>Matr. {{matricula}}</h5>
             <h4 style="color:blue">{{nome}}</h4>
             <h5>Dt.Nascimento.: {{dtNasc}}</h5>
             <h5>Gênero.: {{genero}}</h5>

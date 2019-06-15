@@ -19,27 +19,26 @@ module.exports = {
         const { matr, nome, nasc, genero, admissao, categoria } = req.body
 
         var erros = []
-        if (matr == "" || matr == undefined || matr == null) {
+        if (matr == "" || typeof matr == undefined || matr == null) {
             erros.push({ msg: `Matrícula deve ser Informado` })
         }
-        if (nome == "" || nome == undefined || nome == null) {
+        if (nome == "" || typeof nome == undefined || nome == null) {
             erros.push({ msg: `Nome deve ser Informado` })
         }
-        if (nasc == "" || nasc == undefined || nasc == null) {
+        if (nasc == "" || typeof nasc == undefined || nasc == null) {
             erros.push({ msg: `Data de Nascimento deve ser Informado` })
         }
-        if (admissao == "" || admissao == undefined || admissao == null) {
+        if (admissao == "" || typeof admissao == undefined || admissao == null) {
             //
         }
         if(categoria == "0") {
             erros.push({ msg: `Esta Categoria não pode ser Utilizada. Cadastre uma Categoria` })
         }
         const funcionario = await Funcionario.findOne({ 'matricula': matr })
-        if (funcionario.length > 0) {
+        if (funcionario) {
             erros.push({ msg: `Já existe Funcionário com esta Matrícula` })
         }
         
-
         if (erros.length > 0) {
             res.render('cad/funcionario', { erros: erros })
         }
@@ -55,19 +54,15 @@ module.exports = {
                 .then(() => {
                     Categoria.find()
                         .then((cats) => {
-                            let success = []
-                            success.push({ msg: `Funcionário Registrado com Sucesso.` })
-                            res.render('cad/funcionario', { success:success, cats:cats })
+                            req.flash('suc_msg', `Funcionario [${matr}] Registrado com Sucesso`)
+                            res.redirect('/cad/funcionario')
                         })
-                    
                 })
                 .catch((err) => {
                     Categoria.find()
                         .then((cats) => {
-                            let fail = []
-                            funcss = this.list
-                            fail.push({ msg: `Erro ao Registrar Funcionário. Tente novamamente mais Tarde.` })
-                            res.render('cad/funcionario', { fail:fail, cats:cats })
+                            req.flash('error_msg', 'Erro ao Registrar Funcionário. Tente novamamente mais Tarde.')
+                            res.redirect('/cad/funcionario')
                         })
                     console.log(err)
                 })
@@ -88,19 +83,16 @@ module.exports = {
                     .then(()=>{
                         Categoria.find()
                             .then((cats) => {
-                                let success = []
-                                success.push({ msg: `Funcionário ${func.matricula} Editado com Sucesso.` })
-                                res.render(`info/one`, { success: success, func: func, cats:cats })
+                                req.flash('suc_msg', `Funcionário [${func.matricula}] Editado com Sucesso.`)
+                                res.redirect(`/info/${func._id}`)
                             })
                     })
                     .catch((err)=> {
                         console.log("Erro ao firmar a Edição = " + err)
-                        let fail = []
-                        fail.push({msg:`Erro ao confirmar Edição. Tente novamente mais tarde.`})
-                        res.render(`info/one`, { fail: fail, func: func, cats: callC() })
+                        req.flash('error_msg', `Erro ao confirmar Edição. Tente novamente mais tarde.`)
+                        //res.render(`info/one`, {func: func, cats: callC() })
                     })
             })
-            .catch((err)=> console.log("Erro ao iniciar edição do FUncionario ", err))
-        console.log(funcionario)
+            .catch((err)=> console.log("Erro ao iniciar edição do Funcionario ", err))
     }
 }

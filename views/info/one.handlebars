@@ -1,15 +1,5 @@
-{{#each success}}
-    <div class="alert alert-success" role="alert"> <strong>{{msg}}</strong> </div>
-{{/each}}
-{{#each fail}}
-    <div class="alert alert-danger" role="alert"> <strong>{{msg}}</strong> </div>
-{{/each}}
-
 <h4 style="text-align: center">Visualizar || Editar Funcionário</h4>
 <hr>
-
-    <form action="/edit/funcionario" method="POST">
-
     <div class="card">
         <div class="card-body">
             <form action="/edit/funcionario" method="post">
@@ -36,7 +26,7 @@
                 <input type="text" class="form-control form-control-sm" name="admissao" id="admissao"
                     placeholder="AAAA-MM-DD" pattern="\d{4}-\d{2}-\d{2}" value="{{func.dtAdmissao}}">
     
-                <label for="categoria">Categoria Anterior: {{func.categoria.nome}}</label>
+                <label for="categoria">Categoria Atualmente: {{func.categoria.nome}}</label>
                 <select name="categoria" id="categoria" class="form-control form-control-sm"
                     style="max-width: 50%; width:155px">
                     {{#each cats}}
@@ -50,5 +40,3 @@
             </form>
         </div>
     </div>
-
-</form>
