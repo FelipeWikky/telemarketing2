@@ -1,13 +1,22 @@
-15/06/2019 {
+15/06/2019 - Terceiro Deploy {
 	- Sistema de Usuários
 	- Sistema de Cadastro
-	- Autenticação
-	- Controle de Acesso
 	- Cadastro de Funcionários
 	- Cadastro de Categorias
 	- Listagem de Funcionários
 	- Listagem de Categorias
 	- Edição de Usuários
 	- Edição de Funcionários
+	- Autenticação
+	- Controle de Acesso
 	- Perfil do Usuário
+}
+
+15/06/2019 - Quarto Deploy {
+	- Exclusão de Funcionários
+	- Exlusão de Categorias
+	- Exlusão de Usuários
+	- Editar Categorias
+	- Configuração Visual de algumas páginas (Font-Family)
+	- Busca de Funcionário mediante Matrícula na Pesquida da NavBar
 }

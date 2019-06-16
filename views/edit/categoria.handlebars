@@ -1,0 +1,27 @@
+{{#if categ}}
+    <h4
+        style="font-family:'Times New Roman'; text-align: center; color:blue; font-weight: bold; 
+        border: 2px solid; border-color: black; background: #e6e2e2a2; margin-bottom:50px">
+        Edição de Categoria
+    </h4>
+    
+    <div class="card" style="margin:0pt auto; max-width:60%; width:300px; border-radius:10pt; border:1pt solid; border-color:black;">
+        <div class="card-body">
+            <form action="/dev/edit/categoria" method="post">
+    
+                <input type="hidden" class="form-control form-control-sm" name="uid" id="uid" value={{categ._id}}
+                    style="width: 70px" required min="1" max="50" />
+    
+                <label for="nome">Nome da Categoria</label>
+                <input type="text" class="form-control form-control-sm" name="nome" id="nome" required value="{{categ.nome}}"/>
+    
+                <label for="salario">Salário</label>
+                <input type="text" class="form-control form-control-sm" name="salario" id="salario" value="{{categ.salario}}" placeholder="0000.00"
+                    pattern="\d+\.\d{2}">
+    
+                <button type="submit" class="btn btn-outline-primary mt-4">Editar Categoria</button>
+            </form>
+        </div>
+    </div>
+
+{{/if}}

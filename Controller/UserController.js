@@ -53,7 +53,7 @@ module.exports = {
                                     res.redirect('/')
                                 }
                                 //Inserindo Hash na Senha
-                                newUser.senha = hash
+                                //newUser.senha = hash //-->Descomente para Usar Hash
                                 //Criando Usuario propriamente dito
                                 newUser.save()
                                     .then(() => {
@@ -88,6 +88,19 @@ module.exports = {
                         req.flash('suc_msg', `Usuário Editado com Sucesso`)
                         res.redirect('/dev/usuarios')
                     })
+            })
+    },
+
+    async delete(req, res) {
+        Usuario.deleteOne({ _id: req.params.uid })
+            .then(() => {
+                req.flash('suc_msg', `Usuário Deletado com Sucesso`)
+                res.redirect('/dev/usuario')
+            })
+            .catch((err) => {
+                req.flash('error_msg', `Erro ao tentar Deletar o Usuário`)
+                console('erro delete usuario = ' + err)
+                res.redirect('/dev/usuario')
             })
     }
 }

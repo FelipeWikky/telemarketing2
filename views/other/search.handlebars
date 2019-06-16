@@ -1,0 +1,18 @@
+{{#if func}}
+    <h4>Informações Encontradas</h4>
+    <hr>
+{{/if}}
+
+{{#each func}}
+    <div class="card mt-3" style="border: 2pt solid; border-radius: 10pt; border-color: #a86060">
+        <h3 style="margin-left: 10px">Funcionário(s)</h3>
+        <div class="card-body">
+            <div style="border: 1pt solid; border-radius: 10pt; border-color: #643838">
+                <h4>&bull; {{nome}}</h4>
+                <h4>&ensp;• {{categoria.nome}}</h4>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <h4>Nada foi Encontrado&hellip;</h4>
+{{/each}}

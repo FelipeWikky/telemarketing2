@@ -3,7 +3,8 @@
     <div class="card">
         <div class="card-body">
             <form action="/dev/edit/funcionario" method="post">
-                <input type="hidden" name="uid" id="uid" value="{{func._id}}">
+            <label for="uid">Obj.ID</label>
+                <input type="text" name="uid" id="uid" value="{{func._id}}" class="form-control form-control-sm" readonly>
 
                 <label for="matr">Matrícula</label>
                 <input type="text" class="form-control form-control-sm" name="matr" id="matr" placeholder="XXXX-XX" required

@@ -25,9 +25,13 @@
 {{#each categs}}
     <div class="card mt-4">
         <div class="card-body">
-            <small>{{_id}}</small>
+            <a href="/dev/edit/categoria/{{_id}}"> <small>{{_id}}</small> </a> &larr; Clique para Editar
             <h5>Categoria: {{nome}}</h5>
             <h5>Salário: {{salario}}</h5>
+
+            <a href="/dev/delete/categoria/{{_id}}">
+                <button class="btn btn-outline-danger mt-1" style="max-width: 10%; width: 80px;">Deletar</button>
+            </a>
         </div>
     </div>
 {{/each}}

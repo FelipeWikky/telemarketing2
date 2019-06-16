@@ -1,6 +1,6 @@
 <h4
     style="font-family:'Times New Roman'; text-align: center; color:blue; font-weight: bold; border: 2px solid; border-color: black; background: #e6e2e2a2">
-    Edição de Usuários
+    Visualização | Edição | Exclusão de Usuários
 </h4>
 
 {{#each users}}
@@ -32,6 +32,10 @@
                     style="max-width: 50%; width: 150px" readonly value="{{palavraSecret}}">
 
                 <button type="submit" class="btn btn-outline-primary mt-2">Alterar Dados</button>
+                &emsp;
+                <a href="/dev/delete/usuario/{{_id}}">
+                    <button class="btn btn-outline-danger mt-2">Excluir Usuário</button>
+                </a>
             </form>
     
         </div>

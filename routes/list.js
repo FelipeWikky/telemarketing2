@@ -8,14 +8,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('/funcionario', (req, res) => {
-    Funcionario.find().populate('categoria')
+    Funcionario.find().populate('categoria').sort('-createdAt')
         .then((funcs) => {
             res.render('list/funcionario', { funcs: funcs })
         })
 })
 
 router.get('/categoria', (req, res) => {
-    Categoria.find()
+    Categoria.find().sort('-createdAt')
         .then((categs) => {
             res.render('list/categoria', { categs: categs})
         })

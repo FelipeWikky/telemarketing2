@@ -41,13 +41,18 @@
 {{#each funcs}}
     <div class="card mt-3">
         <div class="card-body">
-            <a href="/dev/info/{{_id}}"> <small style="font-weight: bold">{{categoria._id}}</small> </a>
+            <a href="/dev/info/{{_id}}"> <small style="font-weight: bold">&there4;Clique para Editar este Funcionário&there4;</small> </a>
+            
+
             <h5>Matr. {{matricula}}</h5>
             <h4 style="color:blue">{{nome}}</h4>
             <h5>Dt.Nascimento.: {{dtNasc}}</h5>
             <h5>Gênero.: {{genero}}</h5>
             <h5>Dt.Admissão.: {{dtAdmissao}}</h5>
             <h5>Categoria.: {{categoria.nome}}</h5>
+            <a href="/dev/delete/funcionario/{{_id}}">
+                <button class="btn btn-outline-danger mt-1" style="max-width: 10%; width: 80px;">Deletar</button>
+            </a>
         </div>
     </div>
 {{else}}

@@ -87,5 +87,18 @@ module.exports = {
                     })
             })
             .catch((err)=> console.log("Erro ao iniciar edição do Funcionario ", err))
+    },
+
+    async delete(req, res) {
+        Funcionario.deleteOne({ _id: req.params.uid })
+            .then(()=> {
+                req.flash('suc_msg', `Funcionário Deletado com Sucesso`)
+                res.redirect('/dev/cad/funcionario')
+            })
+            .catch((err)=> {
+                req.flash('error_msg', `Erro ao tentar Deletar o Funcionário`)
+                res.redirect('/dev/cad/funcionario')
+            })
+            
     }
 }

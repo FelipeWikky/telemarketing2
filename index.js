@@ -53,6 +53,7 @@ const { isLogin, isAdmin} = require('./helpers/access')
 
 //Routes
     app.get('/', (req, res) => { res.render('index') })
+    app.use('/search', require('./routes/search'))
 
     app.use('/user', require('./routes/user')) //Login e Registro
     app.get('/login', (req, res) => res.redirect('/user/login'))
@@ -64,6 +65,8 @@ const { isLogin, isAdmin} = require('./helpers/access')
 
     app.use('/dev', isAdmin, require('./routes/dev'))
     
+    
+
     app.get('/teamo', (req, res) => {
         res.render('teamo')
     })
